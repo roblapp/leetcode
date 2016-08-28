@@ -1,11 +1,13 @@
 public class Solution {
+	//Not a very clean solution...
     public IList<Interval> Merge(IList<Interval> intervals)
     {
         var soln = new List<Interval>();
 
         if (intervals == null || intervals.Count == 0)
             return soln;
-
+		
+		//Cannot cast an IList to a List with Mono compiler...
         var tempList = new List<Interval>(intervals);
         tempList.Sort((a, b) =>
         {
